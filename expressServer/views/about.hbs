@@ -1,0 +1,18 @@
+{{>header}}
+
+<h1>About {{user.name}} </h1>
+
+{{#if user.hobbies}}
+<ul>
+  {{#each user.hobbies}}
+  <li>{{this}} </li>
+  {{/each}}
+</ul>
+{{/if}}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aliquam
+dolorem quos, reprehenderit commodi eum nostrum suscipit exercitationem
+doloribus veniam autem error nisi officiis temporibus tempore provident
+voluptates esse quae!
+
+{{>footer}}
