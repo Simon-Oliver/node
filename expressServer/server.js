@@ -22,9 +22,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance');
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance');
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -55,6 +55,13 @@ app.get('/about', (req, res) => {
     hobbies: ['Coding', 'Photography']
   };
   res.render('about', { user });
+});
+
+app.get('/projects', (req, res) => {
+  const projectData = {
+    project: ['Project 1', 'Project 2', 'Project 3']
+  };
+  res.render('projects', { projectData });
 });
 
 app.listen(port, () => {
