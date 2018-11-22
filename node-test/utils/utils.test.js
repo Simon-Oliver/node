@@ -41,3 +41,19 @@ it('should include firstName and lastName', () => {
     .toInclude({ firstName: 'Max', lastName: 'Muster' })
     .toBeA('object');
 });
+
+it('should asyncAdd two numbers', done => {
+  utils.asyncAdd(4, 3, sum => {
+    expect(sum)
+      .toBe(7)
+      .toBeA('number');
+    done();
+  });
+});
+
+it('should sync Square a number', done => {
+  utils.asyncSquare(3, res => {
+    expect(res).toBe(9);
+    done();
+  });
+});
