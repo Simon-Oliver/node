@@ -53,7 +53,9 @@ it('should asyncAdd two numbers', done => {
 
 it('should sync Square a number', done => {
   utils.asyncSquare(3, res => {
-    expect(res).toBe(9);
+    expect(res)
+      .toBe(9)
+      .toBeA('number');
     done();
   });
 });
