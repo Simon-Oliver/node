@@ -11,6 +11,16 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/users', (req, res) => {
+  res
+    .status(200)
+    .send([
+      { name: 'Max', age: 34 },
+      { name: 'Anna', age: 14 },
+      { name: 'Hans', age: 84 }
+    ]);
+});
+
 app.listen(port, () => {
   console.log(`Listening on ${port}`);
 });
