@@ -1,4 +1,8 @@
-const MongoClient = require('mongodb').MongoClient;
+// const MongoClient = require('mongodb').MongoClient;
+const { MongoClient, ObjectID } = require('mongodb');
+
+const obj = new ObjectID();
+console.log(obj);
 
 MongoClient.connect(
   'mongodb://localhost:27017/TodoApp',
@@ -22,19 +26,19 @@ MongoClient.connect(
     //   }
     // );
 
-    db.collection('Users').insertOne(
-      {
-        user: 'Max',
-        age: 35,
-        location: 'Berlin'
-      },
-      (err, result) => {
-        if (err) {
-          return console.log(err);
-        }
-        console.log(result);
-      }
-    );
+    // db.collection('Users').insertOne(
+    //   {
+    //     user: 'Max',
+    //     age: 35,
+    //     location: 'Berlin'
+    //   },
+    //   (err, result) => {
+    //     if (err) {
+    //       return console.log(err);
+    //     }
+    //     console.log(result.ops[0]._id.getTimestamp());
+    //   }
+    // );
 
     client.close();
   }
