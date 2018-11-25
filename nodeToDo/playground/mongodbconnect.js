@@ -9,16 +9,30 @@ MongoClient.connect(
     console.log('Connected to MongoDB server');
     const db = client.db('TodoApp');
 
-    db.collection('Todos').insertOne(
+    // db.collection('Todos').insertOne(
+    //   {
+    //     text: 'This is a test ToDo',
+    //     completed: false
+    //   },
+    //   (err, result) => {
+    //     if (err) {
+    //       return console.log(err);
+    //     }
+    //     console.log(JSON.stringify(result.ops, undefined, 2));
+    //   }
+    // );
+
+    db.collection('Users').insertOne(
       {
-        text: 'This is a test ToDo',
-        completed: false
+        user: 'Max',
+        age: 35,
+        location: 'Berlin'
       },
       (err, result) => {
         if (err) {
           return console.log(err);
         }
-        console.log(JSON.stringify(result.ops, undefined, 2));
+        console.log(result);
       }
     );
 
